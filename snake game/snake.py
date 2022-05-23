@@ -8,7 +8,7 @@ highScore = 0
 
 wn = turtle.Screen()
 wn.title("Jogo da cobrinha")
-wn.bgcolor("blue")
+wn.bgcolor("orange")
 
 wn.setup(width=600, height=600)
 wn.tracer(0)
@@ -102,7 +102,7 @@ while True:
         new_segment = turtle.Turtle()
         new_segment.speed(0)
         new_segment.shape("square")
-        new_segment.color("orange") #cor do corpo
+        new_segment.color("purple") #cor do corpo
         new_segment.penup()
         segments.append(new_segment)
         delay -= 0.001
