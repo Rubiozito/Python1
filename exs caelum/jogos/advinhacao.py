@@ -1,13 +1,26 @@
+from random import random, randrange
+
 print('************************')
 print('*   Adivinhar numero   *')
 print('************************')
 
-numero_secreto = 42
-tentativas = 3
+numero_secreto = randrange(0, 50)
 rodada = 1
 
+print('Escolha a dificulade:')
+print('Digite 1 para ->Facil: 20 tentativas \n Digite 2 para ->Medio: 10 tentativas \n Digite 3 para ->Dificil: 5 tentativas')
+dificuldade = int(input())
+if dificuldade == 1:
+    tentativas = 20
 
-while(rodada <= tentativas):
+if dificuldade == 2:
+    tentativas = 10
+
+if dificuldade == 3:
+    tentativas = 5
+
+print('Advinhe um numero entre 0 e 50')
+for rodada in range(1, tentativas +1):
     print('Tentativa {} de {}'.format(rodada, tentativas))
     chute = int(input('Digite seu numero: \n'))
     print('Seu chute: ', chute)
@@ -26,4 +39,5 @@ while(rodada <= tentativas):
 
     rodada = rodada + 1 
 
+print('O numero secreto era {}'.format(numero_secreto))
 print('Game over')
