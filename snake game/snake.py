@@ -131,7 +131,7 @@ while True:
             shapes = random.choice(['square', 'circle'])
             for segment in segments:
                 segment.goto(1000, 1000)
-            segment.clear()
+            segments.clear()
  
             score = 0
             delay = 0.1
