@@ -16,11 +16,15 @@ class Conta:
             return True
         return False
     
+    def __pode_sacar(self, valor):
+        valor_disponivel = self.__saldo + self.__limite
+        return valor <= valor_disponivel
+
     def saca(self, valor):
-        if not valor>self.__saldo:
+        if(self.__pode_sacar(valor)):
             self.__saldo -= valor
-            return True
-        return False
+        else:
+            print("O valor {} passou o limite".format(valor))
     
     def transfere(self, valor, destino):
         self.saca(valor)
@@ -41,3 +45,11 @@ class Conta:
     @limite.setter
     def limite(self, novo_limite):
         self.__limite = novo_limite
+
+    @staticmethod
+    def codigo_banco():
+        return "001"
+    
+    @staticmethod
+    def codigos_bancos():
+        return {'BB':'001', 'Caixa':'104', 'Bradesco':'237'}
